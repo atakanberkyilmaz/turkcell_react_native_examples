@@ -1,13 +1,43 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback, Image, FlatList, SafeAreaView, ScrollView} from 'react-native';
 import React, { useState} from "react";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+
+import HomeScreen from './src/components/Home';
+import UsersScreen from './src/components/Users';
 
 // import Title from "./src/components/Title";
 // import User from "./src/components/User";
 // import Users from "./src/components/Users";
 // import Header from './src/components/Header';
 
-const App = () => {
+// function HomeScreen() {
+//   return(
+//     <View style = {{flex:1, alignItems: "center", justifyContent: "center"}}>
+//       <Text>HomeScreen</Text>
+//     </View>
+//   )
+// }
+
+const Stack = createNativeStackNavigator();
+
+function App(){
+  return(
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Home'>
+        <Stack.Screen 
+        name= "Home" 
+        component={HomeScreen}
+        options={{
+          title: "Anasayfa",
+        }} />
+        <></>
+        <Stack.Screen name= "Users" component={UsersScreen} options ={{title:"Kullanıcılar"}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
   //Array State
   // const [users, setUsers] = useState([
   //   { id: 1, name: "Ahmet"},
@@ -217,17 +247,17 @@ const Item = ({title}: ItemProps) => (
       <StatusBar style="auto" />
     </SafeAreaView>
   );
-};
 
-const styles = StyleSheet.create({ // componentlere stylesheet ataması yapıp öyle stillendiriyoruz
-  container: {
-    flex:1,
-    justifyContent: "center",
-    alignItems: "center",
+
+// const styles = StyleSheet.create({ // componentlere stylesheet ataması yapıp öyle stillendiriyoruz
+//   container: {
+//     flex:1,
+//     justifyContent: "center",
+//     alignItems: "center",
     // flex: 1,
     // backgroundColor: 'yellow',
     // flexDirection: "column",
-  },
+  // },
   //1.Stillendirme, StyleSheet
   // box: {
   //   width: 200,
@@ -292,6 +322,6 @@ const styles = StyleSheet.create({ // componentlere stylesheet ataması yapıp �
   //   flex: 1,
   //   backgroundColor: "#4630eb",
   // },
-});
+// });
 
 export default App;
