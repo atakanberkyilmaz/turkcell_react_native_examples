@@ -1,14 +1,173 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback, Image, FlatList, SafeAreaView, ScrollView} from 'react-native';
+import React, { useState} from "react";
 
-import Title from "./src/components/Title";
-import User from "./src/components/User";
-import Users from "./src/components/Users";
+// import Title from "./src/components/Title";
+// import User from "./src/components/User";
+// import Users from "./src/components/Users";
 // import Header from './src/components/Header';
 
 const App = () => {
+  //Array State
+  // const [users, setUsers] = useState([
+  //   { id: 1, name: "Ahmet"},
+  //   {
+  //     id: 2,
+  //     name: "Mehmet",
+  //   },
+  // ]);
+  // const handlePress = () => {
+  //   setUsers((prev)=>[
+  //     ...prev,
+  //     { id: Mathfloor(Math.random()* 1000 ), name: Math.floor(Math.random() * 1000)},
+  //   ]);
+  // };
+  // State
+  // const[name, setName] = useState("Mehmet");
+  // const[age, setAge] = useState(29);
+  // const[isVisible, setIsVisible] = useState(true);
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      {/* Array State */}
+      {/* <FlatList 
+      data = {users}
+      keyExtractor={(item) => item.id}
+      renderItem={({item})=> (
+        <View style = {styles.item}>
+        <Text style={styles.text}>{item.name}</Text>
+        </View>
+      )}
+      />
+      <Button title= "Add" onPress={handlePress}/> */}
+      {/* State */}
+      {/* <Button
+      title ={isVisible ? "Gizle": "Göster"}
+      onPress = {() => setIsVisible(!isVisible)}
+      />
+      
+      {isVisible && (
+
+      <>
+      <Text>İsim:{name}</Text>
+      <Text>Yaş:{age}</Text>
+      <Button title = "İsmi Değiştir" onPress={() => setName("Ahmet")}>Click</Button>
+      <Button title = "Yaşı Değiştir" onPress={() => setAge("30")}>Click</Button>
+      </>
+      )} */}
+         {/* ScrollView -> https://reactnative.dev/docs/scrollview */}
+      {/* <ScrollView style={styles.scrollView}>
+        <Text style={styles.text}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+        <Text style={styles.text}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+        <Text style={styles.text}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+        <Text style={styles.text}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+        <Text style={styles.text}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+        <Text style={styles.text}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+        <Text style={styles.text}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+
+      </ScrollView> */}
+        {/* Flatlist kullanımı https://reactnative.dev/docs/flatlist
+        const DATA = [
+  {
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    title: 'First Item',
+  },
+  {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    title: 'Second Item',
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    title: 'Third Item',
+  },
+];
+const Item = ({title}: ItemProps) => (
+  <View style={styles.item}>
+    <Text style={styles.title}>{title}</Text>
+  </View>
+); */}
+      {/* Image Kullanımı */}
+      {/* <Image 
+      resizeMode ="strech"
+      style={{
+        width:"100%",
+        height: 180,
+        borderWidth: 2,
+        borderColor: "red",
+      }}
+      source ={{
+        uri: "https://travellersworldwide.com/wp-content/uploads/2022/11/Shutterstock_1568592469-768x480.jpg.webp",
+      }}/> */}
+      {/* require("./assets/wallpaper.jpg") -> dosyanın içerisinden resime erişme */}
+        {/* Buttonların Kullanımı */}
+     {/* <Button title = "Click Button" onPress={handleClick}/>
+     <TouchableOpacity onPress={handleClick}>         
+      <Text>Click TouchableOpacity</Text>
+     </TouchableOpacity> */}
+     {/* <TouchableHighlight
+      activeOpacity={0.6}
+      underlayColor="#DDDDDD"
+      onPress={() => alert('Pressed!')}>
+     <Text>Click TouchableHighlight</Text>
+</TouchableHighlight>; */}
+     {/* <TouchableWithoutFeedback onPress={() => alert("Pressed!")}>
+      <Text>Click TouchableWithoutFeedback</Text>
+     </TouchableWithoutFeedback> */}
 
       {/* PropTypes Kullanımı */}
       {/* <Title text = "React" color= "red" number= {2} isVisible={true}/> */}
@@ -56,9 +215,9 @@ const App = () => {
         </View>
       </View> */}
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({ // componentlere stylesheet ataması yapıp öyle stillendiriyoruz
   container: {
