@@ -22,22 +22,22 @@ import UsersScreen from './src/components/Users';
 
 const Stack = createNativeStackNavigator();
 
-function App(){
-  return(
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen 
-        name= "Home" 
-        component={HomeScreen}
-        options={{
-          title: "Anasayfa",
-        }} />
-        <></>
-        <Stack.Screen name= "Users" component={UsersScreen} options ={{title:"Kullanıcılar"}}/>
-      </Stack.Navigator>
-    </NavigationContainer>
-  )
-}
+// function App(){
+//   return(
+//     <NavigationContainer>
+//       <Stack.Navigator initialRouteName='Home'>
+//         <Stack.Screen 
+//         name= "Home" 
+//         component={HomeScreen}
+//         options={{
+//           title: "Anasayfa",
+//         }} />
+//         <></>
+//         <Stack.Screen name= "Users" component={UsersScreen} options ={{title:"Kullanıcılar"}}/>
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   )
+// }
   //Array State
   // const [users, setUsers] = useState([
   //   { id: 1, name: "Ahmet"},
@@ -248,7 +248,14 @@ const Item = ({title}: ItemProps) => (
     </SafeAreaView>
   );
 
-
+const styles = StyleSheet.create({
+  container: {
+    flex:1,
+    backgroundColor:"#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  }
+})
 // const styles = StyleSheet.create({ // componentlere stylesheet ataması yapıp öyle stillendiriyoruz
 //   container: {
 //     flex:1,
