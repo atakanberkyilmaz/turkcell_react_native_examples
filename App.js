@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button, TouchableOpacity, TouchableHighlight, T
 import React, { useState} from "react";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+import { NativeBaseProvider } from 'native-base';
 
 import HomeScreen from './src/components/Home';
 import UsersScreen from './src/components/Users';
@@ -20,7 +21,15 @@ import UsersScreen from './src/components/Users';
 //   )
 // }
 
-const Stack = createNativeStackNavigator();
+export default function App(){
+  return(
+    <NativeBaseProvider>
+    <View style = {styles.container}>
+      <FormWithFormik/>
+    </View>
+    </NativeBaseProvider>
+  )
+}
 
 // function App(){
 //   return(
@@ -330,5 +339,3 @@ const styles = StyleSheet.create({
   //   backgroundColor: "#4630eb",
   // },
 // });
-
-export default App;
